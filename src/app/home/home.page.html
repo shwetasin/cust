@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Light
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="custFrom" (ngSubmit)="OnSubmit(custFrom.value)">
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" label="Solid input" label-placement="floating" fill="solid"
+        placeholder="Enter text"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="email" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Mobile</ion-label>
+      <ion-input formControlName="mobile" type="text" placeholder="Number" required></ion-input>
+    </ion-item>
+    <ion-list-header>
+      <ion-label>Interset</ion-label>
+    </ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <button (click)="removeinterset()">
+          <ion-icon name='remove-circle'></ion-icon>
+        </button>
+        <ion-col class="bgcolor" size="6" ion-text-center>
+          <ion-input formControlName="interset" type="text" placeholder="email" required></ion-input>
+        </ion-col>
+        <button (click)="addInterset()">
+        <ion-icon name='add-circle'></ion-icon>
+      </button>
+      </ion-row>
+    </ion-grid> 
+    <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+  </form>
+</ion-content>
